@@ -5,33 +5,33 @@ using UnityEngine;
 public class ArrowsOrientation : MonoBehaviour
 {
 
-    public Quaternion forwardArrow;
-    public Quaternion backArrow;
-    public Quaternion leftArrow;
-    public Quaternion rightArrow;
+    private static Quaternion forwardArrow;
+    private static Quaternion backArrow;
+    private static Quaternion leftArrow;
+    private static Quaternion rightArrow;
 
-    void Start()
-    {
+    public static void TileOrientation_Green (GameObject tile, Transform tileTransform)
+        {
         forwardArrow = Quaternion.Euler(0, 0, 0);
         backArrow = Quaternion.Euler(0, 180, 0);
         leftArrow = Quaternion.Euler(0, 270, 0);
         rightArrow = Quaternion.Euler(0, 90, 0);
 
-        if (transform.rotation == forwardArrow)
+        if (tileTransform.rotation == forwardArrow)
         {
-            gameObject.tag = "Forward Arrow";
+            tile.tag = "Forward Arrow";
         }
-        if (transform.rotation == backArrow)
+        if (tileTransform.rotation == backArrow)
         {
-            gameObject.tag = "Back Arrow";
+            tile.tag = "Back Arrow";
         }
-        if (transform.rotation == leftArrow)
+        if (tileTransform.rotation == leftArrow)
         {
-            gameObject.tag = "Left Arrow";
+            tile.tag = "Left Arrow";
         }
-        if (transform.rotation == rightArrow)
+        if (tileTransform.rotation == rightArrow)
         {
-            gameObject.tag = "Right Arrow";
+            tile.tag = "Right Arrow";
         }
     }
 }
